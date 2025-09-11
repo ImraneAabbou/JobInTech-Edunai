@@ -1,16 +1,11 @@
-#Calculez l'intérêt total sur un prêt de 20000$ à 6% sur 5 ans
-#Ajoutez l'intérêt au principal pour obtenir le montant total dû
-#Divisez le total par 60 mois pour trouver le montant du paiement mensuel
+# Commencez avec l'email 'jean.dupont@exemple.com'
+# Trouvez la position du symbole '@'
+# Extrayez la partie de la chaîne avant le '@' et affichez-la
 
-principal = 20000
-taux = 0.06
-annees = 5
-mois = annees * 12
-interet = principal * taux * annees
-interet_mensuel = principal / mois
+# 💡 Utilisez la méthode .index('@') pour trouver la position, puis découpez la chaîne
 
-print(
-    f"principal={principal}\n",
-    f"interet_mensuel={interet_mensuel}\n",
-    sep=""
-)
+email = 'jean.dupont@exemple.com'
+arobask_position = email.index('@')
+username = email[:arobask_position]
+
+print("la partie de la chaîne avant le '@':", username)

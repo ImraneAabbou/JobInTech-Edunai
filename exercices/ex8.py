@@ -1,9 +1,12 @@
-poids_coli_1 = 2.3
-poids_coli_2 = 5.7
+# Commencez avec un nom de famille, par exemple, 'Dupont'
+# Prenez la première lettre
+# Ajoutez des astérisques '*' pour le reste du nom et affichez le résultat (ex: 'D*****')
 
-frais_exp_colis_1 = 5 + (poids_coli_1 * 2)
-frais_exp_colis_2 = 5 + (poids_coli_2 * 2)
+# 💡 Combinez l'indexation [0], len(), et la multiplication de chaînes
 
+nom = 'Dupont'
+premier_lettre = nom[0]
 
-print(f"prix d'expedition colis 1 = {frais_exp_colis_1}")
-print(f"prix d'expedition colis 2 = {frais_exp_colis_2}")
+secret_name = premier_lettre + ("#" * (len(nom) - 1) )
+
+print(secret_name)

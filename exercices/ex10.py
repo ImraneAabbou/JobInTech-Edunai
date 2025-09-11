@@ -1,14 +1,12 @@
-# Calculez une taxe de 8.5% sur une facture de restaurant de 45.60$
-# Calculez un pourboire de 18% sur le montant original de la facture (avant taxes)
-# Additionnez la facture + la taxe + le pourboire pour obtenir le montant final à payer
+# Commencez avec une chaîne d'entrée en désordre : ' produit A '
+# Supprimez les espaces de début et de fin
+# Mettez le résultat en majuscules et affichez-le
 
-facture_perc = .085
-pourboire_perc = .18
-montant_ttl = 45.6
+# 💡 Enchaînez les méthodes : variable.strip().upper()
 
 
-montant_ttl += montant_ttl * facture_perc
+string = ' produit A '
+no_spaces_around = string.strip()
+uppercase_string = string.upper()
 
-montant_ttl += montant_ttl * pourboire_perc
-
-print(f"montant total: {montant_ttl}")
+print(uppercase_string)

@@ -1,13 +1,10 @@
-# Créez des variables pour 5 notes de matières (85, 92, 78, 96, 88)
-# Additionnez toutes les notes pour obtenir le total des points
-# Divisez par le nombre de matières pour calculer la moyenne générale
+# Créez une variable de prix avec la valeur `59.9`
+# Utilisez une f-string pour formater ce nombre en une chaîne avec deux décimales et un symbole monétaire
+# Affichez la chaîne formatée : 'Prix : 59,90 €'
 
-n1 = 85
-n2 = 92
-n3 = 78
-n4 = 96
-n5 = 88
+# 💡 La mise en forme de f-string : .2f est ce dont vous avez besoin. N'oubliez pas le symbole €
 
-n_ttl = n1 + n2 + n3 + n4 + n5
+price = 59.9
+formatted_price = f"{price:,.2f} €"
 
-print(f"total = {n_ttl}")
+print(f"Prix : {formatted_price}")

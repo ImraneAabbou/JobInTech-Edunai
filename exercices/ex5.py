@@ -1,7 +1,8 @@
-taux_horaire = 15
-heures_regulieres = 40
-heures_sup = 8
+# Créez une variable de nom d'utilisateur avec la valeur 'UtilisateurValide123'
+# Calculez la longueur du nom d'utilisateur
+# Affichez un message comme : 'La longueur du nom d'utilisateur est de : 17'
 
-paie_reguliere = heures_regulieres * taux_horaire
+# 💡 La fonction intégrée `len()` est parfaite pour cela
 
-print("Paie reguliere :", paie_reguliere)
+username = "UtilisateurValide123" 
+print("La longueur du nom d'utilisateur est de :", len(username))

@@ -1,14 +1,11 @@
-investissement = 1000
-taux_interet = .05
-duree = 3
+# Créez des variables pour le prénom ('jean') et le nom ('dupont')
+# Concaténez-les pour créer un nom complet avec un espace entre les deux
+# Affichez le nom complet correctement capitalisé (ex: 'Jean Dupont')
 
-interet_compose = investissement * (1 + taux_interet) ** duree
+# 💡 Utilisez l'opérateur + et la méthode .title()
 
-interet_gagnee = interet_compose - investissement
 
-print(
-        "investissement: ", investissement, "\n",
-        "interet_compose: ", interet_compose, "\n",
-        "interet_gagnee: ", interet_gagnee, "\n",
-        sep=""
-    )
+prenom = "jean"
+nom = "dupont"
+
+print((prenom + " " + nom).title())

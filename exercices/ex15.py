@@ -1,23 +1,19 @@
-# facture = $156.75, taxe = 8.25%, pourboire = 20%, personnes = 6
-# paiements_extra = [personne1: +$10, personne2: +$5]
-# Calculez les montants individuels avec divisions personnalisées
+# Commencez avec une chaîne de données désordonnée comme 'ID:123; Nom : Jean Dupont; Tél: 555.123.4567 '
+# Nettoyez les espaces de début/fin
+# Remplacez les points dans le numéro de téléphone par des tirets
+# Séparez la chaîne en parties logiques en utilisant `.split(';')`
 
-facture = 156.75
-taxe = .0825
-pourboire = .2
-personnes = 6
+raw_data = "ID:123; Nom : Jean Dupont; Tél: 555.123.4567 "
 
-montant_p1 = 10
-montant_p2 = 5
+raw_data = raw_data.strip() # netoyage des espaces
 
-montant_total = facture * (1 + taxe)
-montant_total += montant_total * pourboire
+raw_data = raw_data.replace(".", "-") # remplacement des point avec tiret
 
-montant_individuel = (montant_total - montant_p1 - montant_p2) / 6
+data = raw_data.split("; ")
 
-print(
-    f"montant individuel pour personne 1: {montant_individuel + montant_p1}", "\n",
-    f"montant individuel pour personne 2: {montant_individuel + montant_p2}", "\n",
-    f"montant individuel pour les autres: {montant_individuel}", "\n",
-    sep=""
-)
+print(f"""
+{data[0]}
+{data[1]}
+{data[2]}
+""")
+

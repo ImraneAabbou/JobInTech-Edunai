@@ -1,7 +1,18 @@
-prix_pizza = 18
-personnes_par_pizza = 4
-personnes = 25
+# Créez des variables pour le nom, l'adresse, la ville et le code postal
+# Combinez-les en une seule chaîne où chaque partie est sur une nouvelle ligne
+# Affichez l'étiquette d'expédition formatée
 
-cout_par_personne = prix_pizza / personnes_par_pizza
+# 💡 Utilisez des guillemets triples `"""` ou le caractère de nouvelle ligne `\n`
 
-print("Cout par personne :", cout_par_personne)
+nom = "Someone"
+adresse = "Somewhere"
+ville = "Somewheblanca"
+code_postal = 4444
+
+
+print(f"""
+nom: {nom}
+adresse: {adresse}
+ville: {ville}
+code_postal: {code_postal}
+""")

@@ -1,16 +1,14 @@
-# principal = $300000, durée = 30 ans
-# taux = [3.5%, 4.0%, 4.5%]
-# Calculez et comparez les paiements mensuels pour chaque taux
+# Prenez le prénom, le nom de famille et l'année d'embauche d'un employé comme variables
+# Créez un ID d'employé en utilisant les 3 premières lettres du nom de famille (en majuscules), les 2 premières lettres du prénom (en majuscules), et l'année
+# Combinez-les avec un tiret : 'DUPJE-2024' pour Jean Dupont, embauché en 2024
 
+prenom = "jean"
+nom = "dupdont"
+date_emboche = "2024-03-03"
 
-principal = 300000
-duree_ans = 30
+id1 = nom[:3].upper()
+id2 = prenom[:2].upper()
+year_daumboche = date_emboche.split('-')[0]
+identifier = f"{id1}{id2}-{year_daumboche}"
 
-t1 = .035
-t2 = .04
-t3 = .045
-
-
-print("taux 1: +", principal * t1)
-print("taux 2: +", principal * t2)
-print("taux 3: +", principal * t3)
+print(f"id de {prenom} {nom} est :", identifier)
