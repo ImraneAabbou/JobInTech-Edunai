@@ -1,11 +1,11 @@
-# Commencez avec l'email 'jean.dupont@exemple.com'
-# Trouvez la position du symbole '@'
-# Extrayez la partie de la chaîne avant le '@' et affichez-la
+#    Créez une variable `entree_formulaire` avec la valeur '' (une chaîne vide)
+#    Évaluez la valeur booléenne de `entree_formulaire` en utilisant `bool()`
+#    Affichez le résultat (qui sera `False` car la chaîne est vide)
+#
+#💡 Les chaînes vides et le nombre 0 sont considérés comme 'Falsey'
 
-# 💡 Utilisez la méthode .index('@') pour trouver la position, puis découpez la chaîne
 
-email = 'jean.dupont@exemple.com'
-arobask_position = email.index('@')
-username = email[:arobask_position]
+entree_formulaire = ''
+is_valid = bool(entree_formulaire)
 
-print("la partie de la chaîne avant le '@':", username)
+print("is valid:", is_valid)

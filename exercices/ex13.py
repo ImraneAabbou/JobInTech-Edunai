@@ -1,14 +1,17 @@
-# Prenez le prénom, le nom de famille et l'année d'embauche d'un employé comme variables
-# Créez un ID d'employé en utilisant les 3 premières lettres du nom de famille (en majuscules), les 2 premières lettres du prénom (en majuscules), et l'année
-# Combinez-les avec un tiret : 'DUPJE-2024' pour Jean Dupont, embauché en 2024
+#    Définissez `longueur_piece` = 10.02, `largeur_piece` = 5.01, `poids_piece` = 2.55
+#    Vérifiez si la pièce est dans les tolérances : longueur entre 9.9 et 10.1, largeur entre 4.9 et 5.1, ET poids < 2.6
+#    Affichez `True` si toutes les conditions de qualité sont remplies, sinon `False`
+#
+#💡 Utilisez des comparaisons chaînées comme `9.9 <= longueur_piece <= 10.1`
 
-prenom = "jean"
-nom = "dupdont"
-date_emboche = "2024-03-03"
 
-id1 = nom[:3].upper()
-id2 = prenom[:2].upper()
-year_daumboche = date_emboche.split('-')[0]
-identifier = f"{id1}{id2}-{year_daumboche}"
+longueur_piece = 10.02
+largeur_piece = 5.01
+poids_piece = 2.55
 
-print(f"id de {prenom} {nom} est :", identifier)
+
+dans_tolerance = 9.9 < longueur_piece < 10.1
+dans_tolerance = dans_tolerance and (4.9 < largeur_piece < 5.1)
+dans_tolerance = dans_tolerance and poids_piece < 2.6
+
+print(dans_tolerance)

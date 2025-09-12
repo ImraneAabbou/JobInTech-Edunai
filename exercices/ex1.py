@@ -1,11 +1,8 @@
-# Créez des variables pour le prénom ('jean') et le nom ('dupont')
-# Concaténez-les pour créer un nom complet avec un espace entre les deux
-# Affichez le nom complet correctement capitalisé (ex: 'Jean Dupont')
+# Créez une variable `nom_utilisateur` avec la valeur 'Utilisateur123'
+# Utilisez `len()` pour vérifier si la longueur du nom d'utilisateur est supérieure à 5
+# Affichez `True` si c'est le cas, sinon `False`
 
-# 💡 Utilisez l'opérateur + et la méthode .title()
+nom_utilisateur = "Utilisateur123"
+is_five = len(nom_utilisateur) == 5 
 
-
-prenom = "jean"
-nom = "dupont"
-
-print((prenom + " " + nom).title())
+print(is_five)

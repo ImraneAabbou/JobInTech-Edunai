@@ -1,19 +1,19 @@
-# Commencez avec une chaîne de données désordonnée comme 'ID:123; Nom : Jean Dupont; Tél: 555.123.4567 '
-# Nettoyez les espaces de début/fin
-# Remplacez les points dans le numéro de téléphone par des tirets
-# Séparez la chaîne en parties logiques en utilisant `.split(';')`
+#    Définissez `poids_colis_kg` = 2.5, `pays_destination` = 'FR', `envoi_express` = `True`
+#    Calculez le coût de base (poids * 5€). Calculez le supplément international (10€ si le pays n'est pas 'FR')
+#    Calculez les frais express (15€ si `envoi_express` est `True`). Affichez le coût total.
+#
+#💡 Vous aurez besoin de plusieurs variables pour suivre les coûts. La comparaison de chaînes est `pays_destination == 'FR'`
 
-raw_data = "ID:123; Nom : Jean Dupont; Tél: 555.123.4567 "
 
-raw_data = raw_data.strip() # netoyage des espaces
+poids_colis_kg = 2.5
+pays_destination = 'FR'
+envoi_express = True
 
-raw_data = raw_data.replace(".", "-") # remplacement des point avec tiret
 
-data = raw_data.split("; ")
+cout_de_base = poids_colis_kg * 5
+sup_international = 10 * (pays_destination != 'FR')
+frais_express = 15 * envoi_express
 
-print(f"""
-{data[0]}
-{data[1]}
-{data[2]}
-""")
+total = cout_de_base + sup_international + frais_express
 
+print("Total:", total)

@@ -1,10 +1,11 @@
-# Créez une variable de mois avec la valeur 'janvier'
-# Utilisez des f-strings et des méthodes de chaînes pour créer un en-tête : '===== RAPPORT DES VENTES - JANVIER ====='
-# Affichez l'en-tête
+#    Créez une variable `total_facture` avec la valeur 123.4567
+#    Utilisez `round()` pour arrondir le total à deux décimales
+#    Affichez le résultat arrondi
+#
+#💡 Utilisez `round(total_facture, 2)`
 
-# 💡 Combinez f-strings, .upper(), et la multiplication de chaînes ('=' * 5)
 
-mois = 'janvier'
-header = f"{'=' * 5} RAPPORT DES VENTES - {mois.upper()} {'=' * 5}"
+total_facture = 123.4567
+total_arrondi = round(total_facture, 2)
 
-print(header)
+print(total_arrondi)

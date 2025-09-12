@@ -1,11 +1,9 @@
-# Créez des variables pour le nom du client ('Alice') et le numéro de commande ('TX-123')
-# Utilisez une f-string pour créer un message de salutation : 'Bonjour Alice, merci pour votre commande #TX-123.'
-# Affichez le message final
+# Créez une variable `prix_total` avec la valeur 75.50
+# Créez une variable `est_membre_premium` avec la valeur `True`
+# Vérifiez si le `prix_total` est supérieur à 100 OU si le client `est_membre_premium` pour appliquer la réduction
 
-# 💡 La syntaxe des f-strings est `f"Votre texte {variable}"`
+prix_total = 75.50
+est_membre_premium = True
+can_have_reduction = (prix_total > 100) or (est_membre_premium)
 
-
-nom = "Alice"
-numero_cmd = 'TX-123'
-
-print(f"Bonjour {nom}, merci pour votre commande {numero_cmd}.")
+print("reduction: ", can_have_reduction)

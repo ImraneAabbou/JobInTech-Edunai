@@ -1,12 +1,12 @@
-# Commencez avec un nom de famille, par exemple, 'Dupont'
-# Prenez la première lettre
-# Ajoutez des astérisques '*' pour le reste du nom et affichez le résultat (ex: 'D*****')
+#    Créez `score_employe_A` = 88 et `score_employe_B` = 88
+#    Vérifiez si les deux scores sont exactement égaux
+#    Affichez le résultat de la comparaison
+#
+#💡 L'opérateur d'égalité est `==`
 
-# 💡 Combinez l'indexation [0], len(), et la multiplication de chaînes
+score_employe_A = 88
+score_employe_B = 88
+isEqualScore = score_employe_A == score_employe_B
 
-nom = 'Dupont'
-premier_lettre = nom[0]
 
-secret_name = premier_lettre + ("#" * (len(nom) - 1) )
-
-print(secret_name)
+print("is equal score emp:", isEqualScore)

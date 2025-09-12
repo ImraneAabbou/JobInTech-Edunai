@@ -1,8 +1,9 @@
-# Créez une variable de nom d'utilisateur avec la valeur 'UtilisateurValide123'
-# Calculez la longueur du nom d'utilisateur
-# Affichez un message comme : 'La longueur du nom d'utilisateur est de : 17'
+# Créez une variable `age_utilisateur` avec la valeur 17
+# Créez une variable `age_minimum_requis` avec la valeur 18
+# Affichez `True` si l'utilisateur a l'âge requis, sinon `False`
 
-# 💡 La fonction intégrée `len()` est parfaite pour cela
+age_utilisateur = 17
+age_minimum_requis = 18
+is_safe_age = age_utilisateur >= age_minimum_requis
 
-username = "UtilisateurValide123" 
-print("La longueur du nom d'utilisateur est de :", len(username))
+print("is safe age:", is_safe_age)

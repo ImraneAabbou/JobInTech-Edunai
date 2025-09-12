@@ -1,13 +1,10 @@
-# Utilisez la chaîne de SKU suivante : 'LAP-2024-PRO'
-# Extrayez le type de produit ('LAP'), l'année ('2024') et le modèle ('PRO') dans des variables distinctes
-# Affichez chaque composant sur une ligne séparée
+# Créez une variable `prix_chaine` avec la valeur '199.99'
+# Convertissez cette chaîne en un nombre décimal (float) en utilisant `float()`
+# Affichez le type de la nouvelle variable de prix pour confirmer que c'est bien un float
 
-# 💡 Le découpage de chaîne [start:end] est la clé ici. Rappelez-vous que l'indexation commence à 0
+prix_chaine = '199.99'
+prix_float = float(prix_chaine)
+# is_float = isinstance(prix_float, float)
+is_float = type(prix_float) is float
 
-product = 'LAP-2024-PRO'.split("-")
-
-print(f"""\
-nom: {product[0]}
-annee: {product[1]}
-model: {product[2]}
-""")
+print("c'est un float: ", is_float)

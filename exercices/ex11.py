@@ -1,18 +1,17 @@
-# Définissez des variables pour le nom du client, le nom du produit, la quantité et le prix unitaire
-# Calculez le sous-total, une taxe de 8 % et le total final
-# Créez un reçu multi-lignes bien formaté en utilisant des f-strings et des caractères spéciaux
-# Assurez-vous que les nombres sont formatés à deux décimales
+#    Définissez `revenu_annuel` = 55000, `score_credit` = 720, `duree_emploi_annees` = 3
+#    Créez des variables booléennes pour chaque condition : `revenu_suffisant` (>50k), `score_credit_bon` (>700), `emploi_stable` (>2 ans)
+#    Combinez les trois booléens pour décider si le prêt est `approuve` (tous doivent être vrais)
+#
+#💡 Utilisez l'opérateur `and` pour combiner les conditions finales
 
-# 💡 Utilisez \t pour l'alignement et :.2f pour le formatage des prix
+revenu_annuel = 55000
+score_credit = 720
+duree_emploi_annees = 3
 
-client_name = "Someone"
-product_name = "Something"
-product_qty = 4
-unit_price = 4444
-taxe = .08
+min_revenu_suffisant = 50000
+min_score_credit_bon = 700
+min_emploi_annees = 2 # stabilite
 
-# sous-total
-total = unit_price * product_qty
-total += total * .08
+est_approuve = (revenu_annuel > min_revenu_suffisant) and (score_credit > min_score_credit_bon) and (min_emploi_annees > min_emploi_annees)
 
-print(f"Prix: {total:.2f}")
+print("credit approuve:", est_approuve)

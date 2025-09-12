@@ -1,18 +1,11 @@
-# Créez des variables pour le nom, l'adresse, la ville et le code postal
-# Combinez-les en une seule chaîne où chaque partie est sur une nouvelle ligne
-# Affichez l'étiquette d'expédition formatée
+# Créez une variable `quantite_stock` avec la valeur 15
+# Créez une variable `seuil_recommande` avec la valeur 20
+# Vérifiez si `quantite_stock` est inférieure ou égale au `seuil_recommande`
 
-# 💡 Utilisez des guillemets triples `"""` ou le caractère de nouvelle ligne `\n`
+quantite_stock = 15
+seuil_recommande = 20
 
-nom = "Someone"
-adresse = "Somewhere"
-ville = "Somewheblanca"
-code_postal = 4444
+is_available_qty = quantite_stock >= seuil_recommande
 
 
-print(f"""
-nom: {nom}
-adresse: {adresse}
-ville: {ville}
-code_postal: {code_postal}
-""")
+print("Available:", is_available_qty)
