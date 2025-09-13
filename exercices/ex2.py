@@ -1,9 +1,17 @@
-# Créez une variable `prix_total` avec la valeur 75.50
-# Créez une variable `est_membre_premium` avec la valeur `True`
-# Vérifiez si le `prix_total` est supérieur à 100 OU si le client `est_membre_premium` pour appliquer la réduction
+#    Créez une liste de 6 numéros de commande (CMD001, CMD002, CMD003, CMD004, CMD005, CMD006)
+#    Traitez les 3 premières commandes (retirez-les de la liste)
+#    Affichez les commandes restantes en attente de traitement
+#
+#💡 Utilisez del ou pop() pour retirer des éléments du début de la liste
 
-prix_total = 75.50
-est_membre_premium = True
-can_have_reduction = (prix_total > 100) or (est_membre_premium)
+numbers = ["CMD001", "CMD002", "CMD003", "CMD004", "CMD005", "CMD006"]
 
-print("reduction: ", can_have_reduction)
+print(
+    "first elements:",
+    numbers.pop(0),
+    numbers.pop(1),
+    numbers.pop(2),
+)
+
+
+print("rest en attente:", numbers)

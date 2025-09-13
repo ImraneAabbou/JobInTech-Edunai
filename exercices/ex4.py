@@ -1,11 +1,12 @@
-# Créez une variable `quantite_stock` avec la valeur 15
-# Créez une variable `seuil_recommande` avec la valeur 20
-# Vérifiez si `quantite_stock` est inférieure ou égale au `seuil_recommande`
-
-quantite_stock = 15
-seuil_recommande = 20
-
-is_available_qty = quantite_stock >= seuil_recommande
+#    Créez une liste de noms d'employes [Alice, Bob, Charlie, Diana, Eve]
+#    Triez la liste par ordre alphabétique
+#    Créez une liste inversée pour un ordre alphabétique inverse
+#
+#💡 Utilisez sort() pour trier et reverse() pour inverser
 
 
-print("Available:", is_available_qty)
+employes = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+
+employes.sort(reverse=True)
+
+print("employes inversée:", employes)

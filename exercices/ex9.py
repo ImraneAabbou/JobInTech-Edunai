@@ -1,14 +1,20 @@
-#    Imaginez trois prix : `prix1` = 49.99, `prix2` = 59.99, `prix3` = 39.99
-#    Utilisez `min()` pour trouver le prix le plus bas parmi les trois
-#    Utilisez `max()` pour trouver le prix le plus élevé et affichez les deux résultats
-#
-#💡 `min()` et `max()` peuvent prendre plusieurs arguments : `min(prix1, prix2, prix3)`
+#    Créez une liste de revenus trimestriels [125000, 138000, 142000, 156000]
+#    Calculez la croissance entre chaque trimestre
+#    Identifiez le trimestre avec la plus forte croissance
 
-prix1 = 49.99
-prix2 = 59.99
-prix3 = 39.99
 
-prix_min = min(prix1, prix2, prix3)
-prix_max = max(prix1, prix2, prix3)
+revenus_trimestriels = [125000, 138000, 142000, 156000]
 
-print("min prix:", prix_min, "; max prix:", prix_max)
+croissances = list(
+    map(
+        lambda pair: pair[1] - pair[0],
+        zip(revenus_trimestriels, revenus_trimestriels[1:])
+    )
+)
+
+
+print(
+    "croissances: ", croissances, "\n",
+    "max croissance: ", max(croissances), "\n",
+    sep=""
+)

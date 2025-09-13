@@ -1,12 +1,11 @@
-#    Créez `score_employe_A` = 88 et `score_employe_B` = 88
-#    Vérifiez si les deux scores sont exactement égaux
-#    Affichez le résultat de la comparaison
-#
-#💡 L'opérateur d'égalité est `==`
+#    Créez une liste de catégories [Électronique, Vêtements, Livres, Maison, Sports]
+#    Vérifiez si 'Électronique' et 'Automobile' sont dans la liste
+#    Ajoutez 'Automobile' s'il n'existe pas déjà
 
-score_employe_A = 88
-score_employe_B = 88
-isEqualScore = score_employe_A == score_employe_B
+categories = ["Électronique", "Vêtements", "Livres", "Maison", "Sports"]
 
 
-print("is equal score emp:", isEqualScore)
+print(
+    "'Électronique'  dans la liste:",'Électronique' in categories, "\n"
+    "'Automobile'  dans la liste:",'Automobile' in categories, "\n"
+)

@@ -1,9 +1,13 @@
-# Créez une variable `age_utilisateur` avec la valeur 17
-# Créez une variable `age_minimum_requis` avec la valeur 18
-# Affichez `True` si l'utilisateur a l'âge requis, sinon `False`
+#    Créez une liste de priorités [Normal, Urgent, Express, Standard, Rush]
+#    Déplacez tous les articles 'Urgent' et 'Rush' au début de la liste
+#    Affichez la liste de priorités finale organisée
 
-age_utilisateur = 17
-age_minimum_requis = 18
-is_safe_age = age_utilisateur >= age_minimum_requis
+priorities = ["Normal", "Urgent", "Express", "Standard", "Rush"]
 
-print("is safe age:", is_safe_age)
+priorities.remove("Urgent")
+priorities.insert(0, "Urgent")
+
+priorities.remove("Rush")
+priorities.insert(1, "Rush")
+
+print(priorities)

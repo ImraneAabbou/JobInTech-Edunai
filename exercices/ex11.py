@@ -1,17 +1,35 @@
-#    Définissez `revenu_annuel` = 55000, `score_credit` = 720, `duree_emploi_annees` = 3
-#    Créez des variables booléennes pour chaque condition : `revenu_suffisant` (>50k), `score_credit_bon` (>700), `emploi_stable` (>2 ans)
-#    Combinez les trois booléens pour décider si le prêt est `approuve` (tous doivent être vrais)
-#
-#💡 Utilisez l'opérateur `and` pour combiner les conditions finales
+#Créez des listes pour titres_films ['Héros d'Action', 'Histoire d'Amour', 'Soirée Comédie'], horaires ['19h00', '21h30', '18h00'], sieges_disponibles [45, 23, 67], et prix_billets [12.50, 10.00, 8.50]
+#Calculez les revenus totaux si tous les sièges sont vendus pour chaque film
+#Trouvez quel film a le plus haut potentiel de revenus
+#Déterminez le prix moyen des billets pour tous les films
+#Créez une liste de réservation prioritaire triée par potentiel de revenus (le plus élevé en premier)
 
-revenu_annuel = 55000
-score_credit = 720
-duree_emploi_annees = 3
+titres_films = ['Héros d\'Action', 'Histoire d\'Amour', 'Soirée Comédie']
+horaires = ['19h00', '21h30', '18h00']
+sieges_disponibles = [45, 23, 67]
+prix_billets = [12.50, 10.00, 8.50]
 
-min_revenu_suffisant = 50000
-min_score_credit_bon = 700
-min_emploi_annees = 2 # stabilite
+revenues = list(
+    map(
+        lambda pair: pair[0] * pair[1],
+        zip(
+            prix_billets,
+            sieges_disponibles
+        )
+    )
+)
 
-est_approuve = (revenu_annuel > min_revenu_suffisant) and (score_credit > min_score_credit_bon) and (min_emploi_annees > min_emploi_annees)
+zipped_films_prices = sorted(zip(titres_films, prix_billets), key=lambda pair: pair[1], reverse=True)
 
-print("credit approuve:", est_approuve)
+[max_revenu_film_name, max_revenu_film_price] = zipped_films_prices[0]
+
+prix_moyenne = sum(prix_billets) / len(prix_billets)
+
+reservation_prioritaire = sorted(revenues, reverse=True)
+
+
+
+print("Revenus potentiels par film :", revenues)
+print(f"Le film avec le plus haut potentiel est '{max_revenu_film_name}' avec {max_revenu_film_price} €")
+print("Prix moyen des billets :", round(prix_moyenne, 2))
+print("Liste de réservation prioritaire :", reservation_prioritaire)

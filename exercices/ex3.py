@@ -1,10 +1,11 @@
-# Créez une variable `prix_chaine` avec la valeur '199.99'
-# Convertissez cette chaîne en un nombre décimal (float) en utilisant `float()`
-# Affichez le type de la nouvelle variable de prix pour confirmer que c'est bien un float
+# Créez une liste de ventes mensuelles [15000, 18000, 22000, 19000, 25000, 21000]
+# Trouvez le mois avec les ventes les plus élevées et les plus basses
+# Calculez et affichez les ventes totales et moyennes
 
-prix_chaine = '199.99'
-prix_float = float(prix_chaine)
-# is_float = isinstance(prix_float, float)
-is_float = type(prix_float) is float
+ventes_mensuelles = [15000, 18000, 22000, 19000, 25000, 21000]
 
-print("c'est un float: ", is_float)
+print(
+    "mois plus elvees:", max(ventes_mensuelles), "\n",
+    "mois plus basses:", min(ventes_mensuelles),
+    sep=""
+)

@@ -1,11 +1,9 @@
-#    Créez une variable `entree_formulaire` avec la valeur '' (une chaîne vide)
-#    Évaluez la valeur booléenne de `entree_formulaire` en utilisant `bool()`
-#    Affichez le résultat (qui sera `False` car la chaîne est vide)
-#
-#💡 Les chaînes vides et le nombre 0 sont considérés comme 'Falsey'
+#    Créez une liste de scores de satisfaction [4.2, 3.8, 4.9, 3.5, 4.7, 4.1, 3.9]
+#    Comptez combien de scores sont supérieurs à 4.0
+#    Trouvez le score le plus élevé et le plus bas
 
 
-entree_formulaire = ''
-is_valid = bool(entree_formulaire)
+satisfaction_scores = [4.2, 3.8, 4.9, 3.5, 4.7, 4.1, 3.9]
+high_scores = list(filter(lambda x: x > 4, satisfaction_scores))
 
-print("is valid:", is_valid)
+print("scores supérieurs a 4:", high_scores, f"; {len(high_scores)} score(s)")

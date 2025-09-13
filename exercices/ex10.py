@@ -1,11 +1,11 @@
-#    Créez `solde_compte` = 250.00 et `prix_article` = 300.00
-#    Créez une variable `peut_acheter` qui est `True` si le solde est suffisant
-#    Affichez la valeur de `peut_acheter`
-#
-#💡 La condition est `solde_compte >= prix_article`
+# Créez une liste de points de fidélité [850, 1200, 750, 1500, 920, 1100]
+# Triez les clients par points (du plus élevé au plus bas)
+# Identifiez les 3 meilleurs clients (top 3)
 
-solde_compte = 250.00
-prix_article = 300.00
-peut_acheter = solde_compte >= prix_article
+points_fidelite = [850, 1200, 750, 1500, 920, 1100]
 
-print("peut acheter", peut_acheter)
+points_fidelite.sort()
+
+high_fidelity_points = points_fidelite[:3]
+
+print(high_fidelity_points)

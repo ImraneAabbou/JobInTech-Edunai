@@ -1,15 +1,15 @@
-# Définissez `total_panier` = 120.00, `est_client_fidele` = `True`, `code_promo` = 'ETE20'
-# Créez une variable `livraison_gratuite` si le total est > 100 OU si le client est fidèle
-# Créez une variable `reduction_supplementaire` si `livraison_gratuite` est vraie ET si le `code_promo` est 'ETE20'
-# 💡 Combinez les opérateurs `or` et `and` dans la bonne séquence
+# Créez des listes pour noms_etudiants ['Alex', 'Beth', 'Carlos', 'Diana'], notes_test1 [85, 92, 78, 96], notes_test2 [88, 89, 82, 94], et notes_test3 [90, 87, 85, 92]
+# Calculez la note moyenne de chaque étudiant sur les trois tests
+# Identifiez les étudiants qui se sont améliorés du test 1 au test 3
+# Trouvez la moyenne de classe pour chaque test
+# Déterminez quel test a eu la meilleure performance de classe
 
 
-total_panier = 120.00
-est_client_fidele = True
-code_promo = 'ETE20'
+noms_etudiants = ["Alex", "Beth", "Carlos", "Diana"]
+notes_test1 = [85, 92, 78, 96]
+notes_test2 = [88, 89, 82, 94]
+notes_test3 = [90, 87, 85, 92]
 
-livraison_gratuite = (total_panier > 100) or est_client_fidele
-reduction_supplementaire = (code_promo == "ETE20") and livraison_gratuite
+etudiant_note_zipped = list(zip(noms_etudiants, notes_test1, notes_test2, notes_test3))
 
-
-print("livraison_gratuite:", livraison_gratuite, "; reduction_supplementaire:", reduction_supplementaire)
+list(map(lambda e: print(f"{e[0]} -> {sum(e[1:]) / len(e[1:])}"), etudiant_note_zipped))
