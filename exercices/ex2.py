@@ -1,14 +1,12 @@
-#     Créez un dictionnaire `prix_produits` associant 'Ordinateur' à 1200 et 'Souris' à 25.
-#     Mettez à jour le prix de 'Ordinateur' à 1150.
-#     Affichez tous les noms de produits en utilisant la méthode `.keys()`.
+#     Étant donné un `solde_compte` et un `montant_retrait`, vérifiez si le solde est suffisant.
+#     Si oui, affichez le nouveau solde. Sinon, affichez un message 'Fonds insuffisants'.
 #
-# 💡 Utilisez `prix_produits['Ordinateur'] = 1150` pour mettre à jour la valeur.
+# 💡 Un simple bloc `if/else` est parfait pour cela.
 
-prix_produits = {
-    "ordinateur": 1200,
-    "souris": 25,
-}
+solde_compte = 100
+montant_retrait = 10
 
-prix_produits["ordinateur"] =  1150
-
-print(prix_produits['ordinateur'])
+if (nouveau_solde := (solde_compte - montant_retrait)) >= 0:
+    print('Nouveau_solde:', nouveau_solde)
+else:
+    print("Fonds insuffisants")

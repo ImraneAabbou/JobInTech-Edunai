@@ -1,11 +1,17 @@
-#     Créez un dictionnaire `menu` avec des plats comme clés et des prix comme valeurs (ex: 'Pizza': 12.50).
-#     Utilisez la méthode `.get()` pour vérifier en toute sécurité le prix du 'Sushi', en fournissant un message par défaut s'il n'est pas trouvé.
-#     Affichez le résultat.
+# Écrivez du code pour effectuer les tâches suivantes :
 #
-# 💡 `menu.get('Sushi', 'Plat non disponible')` prévient les erreurs.
+#     Étant donné un `total_historique_achats`, attribuez un niveau : 'Bronze' pour <100€, 'Argent' pour 100€-500€, 'Or' pour >500€.
+#
+# 💡 L'ordre de vos conditions `if/elif` est important.
 
-menu = {
-    "pizza": 12.5,
-}
+total_historique_achats = 320
 
-print("Sushi:", menu.get("Sushi", "n'est pas trouvé"))
+if total_historique_achats < 100:
+    niveau = "Bronze"
+elif total_historique_achats <= 500:
+    niveau = "Argent"
+else:
+    niveau = "Or"
+
+print(niveau)
+

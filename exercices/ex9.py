@@ -1,14 +1,10 @@
-#     Retirer un Produit Arrêté
-#     Utilisez la méthode `.pop()` pour retirer la clé 'est_actif' et stocker sa valeur dans une variable.
-#     Affichez la valeur retirée et le dictionnaire mis à jour.
-#
-# 💡 `valeur_retiree = mon_dict.pop('cle_a_retirer')`.
+# Étant donné un `message_utilisateur`, s'il contient le mot 'aide', affichez 'Comment puis-je vous aider ?'. Sinon, affichez 'Je ne comprends pas'.
+message_utilisateur = "peux-tu m'aider avec ma commande ?"
+reponse = ""
 
-products = {
-    "nom": "",
-    "prix": 150,
-    "est_actif": False,
-}
+if "aide" in message_utilisateur:
+    reponse = "Comment puis-je vous aider ?"
+else:
+    reponse = "Je ne comprends pas"
 
-print("la valeur retirée:", products.pop("est_actif"))
-print("le dictionnaire mis à jour:", products)
+print(reponse)

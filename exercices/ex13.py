@@ -1,20 +1,17 @@
-#     Créez un dictionnaire où les clés sont des noms de villes ('Paris', 'Londres').
-#     La valeur pour chaque ville doit être un autre dictionnaire représentant son inventaire (ex: {'ordinateurs': 10, 'souris': 50}).
-#     Écrivez du code pour afficher le stock d''ordinateurs' à 'Londres'.
-#
-# 💡 Accédez aux données imbriquées avec plusieurs clés : `inventaire['Londres']['ordinateurs']`.
+# La prime de base est de 500€. Si l'`âge` est inférieur à 25 ans, ajoutez 200€. Si `a_eu_accidents` est `True`, ajoutez 300€.
+# Si l'`âge` est supérieur à 60 ANS ET `a_eu_accidents` est `False`, accordez une réduction de 100€.
+age = 62
+a_eu_accidents = False
 
+prime = 500
 
-inventaire = {
-    "Paris": {"ordinateurs": 200, "souris": 250},
-    "Londres": {"ordinateurs": 120, "souris": 500},
-}
+if age < 25:
+    prime += 200
 
+if a_eu_accidents:
+    prime += 300
 
-print("[*] Paris:")
-print("\t", "ordinateurs:", inventaire["Paris"]["ordinateurs"])
-print("\t", "souris:", inventaire["Paris"]["ordinateurs"])
+if age > 60 and not a_eu_accidents:
+    prime -= 100
 
-print("[*] Londres:")
-print("\t", "ordinateurs:", inventaire["Londres"]["ordinateurs"])
-print("\t", "souris:", inventaire["Londres"]["ordinateurs"])
+print(prime)

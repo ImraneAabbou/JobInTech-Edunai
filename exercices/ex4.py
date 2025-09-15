@@ -1,12 +1,26 @@
-#     Créez une liste d'adresses IP de visiteurs avec des doublons : ['ip1', 'ip2', 'ip1', 'ip3', 'ip2'].
-#     Convertissez la liste en un set pour trouver les adresses IP uniques.
-#     Affichez le nombre de visiteurs uniques en utilisant `len()` sur le set.
+#     Étant donné un `revenu`, calculez l'impôt : 10% pour un revenu jusqu'à 50k€, 20% pour 50k€-100k€, et 30% pour plus de 100k€.
 #
-# 💡 Utilisez `set(ma_liste)` pour convertir une liste en set et supprimer les doublons.
+# 💡 C'est un excellent cas d'utilisation pour `if/elif/else`.
 
 
-ips = ['ip1', 'ip2', 'ip1', 'ip3', 'ip2']
+revenu = 5000
 
-ips_unique = set(ips)
+impot_perc_dict = {
+    "a": 0.3,
+    "b": 0.2,
+    "c": 0.1,
+}
 
-print('nombre visiteurs:', len(ips_unique))
+impot_perc = 0
+
+if revenu <= 50000:
+    impot_perc = impot_perc_dict["c"]
+elif revenu <= 100000:
+    impot_perc = impot_perc_dict["b"]
+else:
+    impot_perc = impot_perc_dict["a"]
+
+impot = revenu * (1 + impot_perc)
+
+
+print("impot:", impot)

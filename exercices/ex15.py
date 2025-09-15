@@ -1,91 +1,14 @@
-#     Commencez avec une liste de dictionnaires, où chaque dictionnaire représente une transaction de vente avec les clés 'produit', 'region', et 'montant'.
-#     Calculez les ventes totales par région.
-#     Calculez les ventes totales par produit.
-#     Identifiez le produit le plus vendu.
-#
-# 💡 Vous devrez parcourir la liste de dictionnaires et utiliser un autre dictionnaire pour stocker les totaux de ventes agrégés.
+# Décidez de lancer ou non un nouveau produit.
+# Lancement si (`score_etude_marche` > 8 ET `marge_beneficiaire_estimee` > 0.2) OU (`concurrent_est_faible` est `True` ET `ressources_internes_disponibles` est `True`).
+score_etude_marche = 9
+marge_beneficiaire_estimee = 0.25
+concurrent_est_faible = False
+ressources_internes_disponibles = True
+decision = ""
 
-transactions = [
-    {
-        "produit": "Wifi ADSL TP-link",
-        "region": "Casa Settat",
-        "montant": 150,
-    },
-    {
-        "produit": "Wifi ADSL TP-link",
-        "region": "Casa Settat",
-        "montant": 200,
-    },
-    {
-        "produit": "Smartphone Samsung A14",
-        "region": "Rabat Salé Kenitra",
-        "montant": 2200,
-    },
-    {
-        "produit": "Laptop Lenovo IdeaPad",
-        "region": "Casa Settat",
-        "montant": 5400,
-    },
-    {
-        "produit": "Imprimante HP DeskJet",
-        "region": "Fès Meknès",
-        "montant": 1200,
-    },
-    {
-        "produit": "Laptop Lenovo IdeaPad",
-        "region": "Marrakech Safi",
-        "montant": 5600,
-    },
-    {
-        "produit": "Smartphone Samsung A14",
-        "region": "Casa Settat",
-        "montant": 2150,
-    },
-    {
-        "produit": "Tablette iPad Mini",
-        "region": "Tanger Tétouan Al Hoceima",
-        "montant": 4600,
-    },
-    {
-        "produit": "Imprimante HP DeskJet",
-        "region": "Rabat Salé Kenitra",
-        "montant": 1150,
-    },
-    {
-        "produit": "Wifi ADSL TP-link",
-        "region": "Marrakech Safi",
-        "montant": 170,
-    },
-]
+if (score_etude_marche > 8 and marge_beneficiaire_estimee > 0.2) or (concurrent_est_faible and ressources_internes_disponibles):
+    decision = "Lancement Recommandé"
+else:
+    decision = "En attente pour examen plus approfondi"
 
-
-for region in set(map(lambda t: t["region"], transactions)):
-
-    region_montant_sum = sum(
-        map(
-            lambda t: t["montant"],
-            filter(lambda t: t["region"] == region, transactions),
-        )
-    )
-
-    print(region, ":", region_montant_sum)
-
-print("_" * 5)
-
-for produit in set(map(lambda t: t["produit"], transactions)):
-
-    produit_montant_sum = sum(
-        map(
-            lambda t: t["montant"],
-            filter(lambda t: t["produit"] == produit, transactions),
-        )
-    )
-
-    print(produit, ":", produit_montant_sum)
-
-
-print("_" * 5)
-
-produits = list(map(lambda p: p["produit"], transactions))
-
-print("produit plus vendu:", max(set(produits), key=lambda t: produits.count(t)))
+print(decision)

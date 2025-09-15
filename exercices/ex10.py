@@ -1,16 +1,11 @@
-#     Créez un dictionnaire `menu` avec au moins trois plats et leurs prix.
-#     Utilisez la méthode `.items()` pour obtenir toutes les paires clé-valeur.
-#     Affichez la liste des plats.
-#
-# 💡 `.items()` retourne un objet de vue qui affiche une liste des paires clé-valeur (en tuples) d'un dictionnaire.
+# Si la `temperature` est inférieure à 0°C OU si `il_pleut` est `True`, affichez 'Restez à l'intérieur !'. Sinon, affichez 'Profitez du beau temps'.
+temperature = -3
+il_pleut = False
+message = ""
 
-menu = {
-    "pizza": 20,
-    "sandwich": 20,
-    "chawarma": 20,
-}
+if temperature < 0 or il_pleut:
+    message = "Restez à l'intérieur !"
+else:
+    message = "Profitez du beau temps"
 
-menu.items()
-
-for plat, prix in menu.items():
-    print(f"{plat}: {prix}")
+print(message)

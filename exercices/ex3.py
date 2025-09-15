@@ -1,11 +1,10 @@
-#     Créez un tuple pour stocker un dossier d'employé : (id_employe, nom, departement).
-#     Utilisez des valeurs comme (101, 'Alice', 'Ventes').
-#     Dépaquetez le tuple en trois variables distinctes et affichez le nom de l'employé.
+#     Calculez les frais de port : Si le total d'une commande est supérieur à 50€, la livraison est gratuite. Sinon, elle coûte 5€.
 #
-# 💡 Le dépaquetage se fait comme ceci : `id_emp, nom, dept = tuple_employe`.
+# 💡 Vous pouvez utiliser un opérateur ternaire pour une solution concise.
 
-employe = (101, "Alice", "Ventes")
+ttl_cmd = 250
 
-(id_employe, alice,departement) = employe
+livraison_frais = 0 if ttl_cmd > 50 else 5    
 
-print(id_employe, alice,departement)
+
+print("Total cmd:", ttl_cmd, "; Livraison frais:", livraison_frais)

@@ -1,14 +1,17 @@
-#     Créez un dictionnaire pour un client avec les clés : 'nom', 'email', 'ville'.
-#     Ajoutez une nouvelle paire clé-valeur pour 'points_fidelite' avec une valeur de 100.
-#     Affichez l'adresse email du client.
+#     Étant donné un `score` numérique, affichez 'A' si le score est de 90-100, 'B' si 80-89, 'C' si 70-79, 'D' si 60-69, et 'F' sinon.
 #
-# 💡 Accédez aux valeurs du dictionnaire avec des crochets : `client['email']`.
+# 💡 Utilisez une chaîne d'instructions `if`, `elif`, et `else`.
 
-client = {
-    "nom": "someone",
-    "email": "someone@something.com",
-    "ville": "somewhere",
-}
+score = 80
 
 
-print("client mail:", client['email'])
+if 90 <= score <= 100:
+    print("A")
+elif 70 <= score <= 80:
+    print("B")
+else:
+    print("F")
+
+
+
+

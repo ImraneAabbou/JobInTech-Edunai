@@ -1,13 +1,11 @@
-#     Stockez la configuration d'un serveur dans un tuple : ('192.168.1.1', 8080, 'production').
-#     Accédez à l'adresse IP (le premier élément) et affichez-la.
-#     Essayez de changer le numéro de port et observez l'erreur (car les tuples sont immuables).
-#
-# 💡 Accédez aux éléments avec l'indexation `config[0]`, mais vous ne pouvez pas assigner une nouvelle valeur.
+# Un prêt est approuvé si le `score_credit` est > 700 ET le `revenu` est > 50 000€. Affichez 'Approuvé' ou 'Refusé'.
+score_credit = 720
+revenu = 48000
+decision = ""
 
-server = ("192.168.1.1", 8080, "production")
+if score_credit > 700 and revenu > 50000:
+    decision = "Approuvé"
+else:
+    decision = "Refusé"
 
-(ip, *_) = server
-
-print("ip:", ip)
-
-server[1] = 4444  # err
+print(decision)

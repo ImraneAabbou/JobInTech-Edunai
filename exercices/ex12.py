@@ -1,18 +1,21 @@
-#     Créez deux sets d'ID clients. Un pour les 'acheteurs_mois_dernier' et un pour les 'abonnes_newsletter'.
-#     Trouvez les clients qui ont acheté le mois dernier ET qui sont abonnés à la newsletter.
-#     Trouvez les clients qui sont abonnés mais qui n'ont PAS acheté le mois dernier.
-#     Trouvez tous les clients uniques des deux groupes.
-#
-# 💡 Utilisez les opérations sur les sets : `intersection`, `difference`, et `union`.
+# Étape 1 : Vérifiez `score_credit` > 650. Sinon, refuser.
+# Étape 2 : Si le crédit est bon, vérifiez `revenu` > 40 000€. Sinon, refuser.
+# Étape 3 : Si les deux sont bons, vérifiez `ratio_dette_revenu` < 0.4. Sinon, refuser.
+# Si tout est bon, approuver.
+score_credit = 700
+revenu = 45000
+ratio_dette_revenu = 0.35
+decision = ""
 
-acheteurs_mois_dernier = {"client 1", "client 4", "client 9"}
-abonnes_newsletter = {"client 2", "client 3", "client 7"}
+if score_credit > 650:
+    if revenu > 40000:
+        if ratio_dette_revenu < 0.4:
+            decision = "Approuvé"
+        else:
+            decision = "Refusé"
+    else:
+        decision = "Refusé"
+else:
+    decision = "Refusé"
 
-
-abonne_pas_achete = abonnes_newsletter.difference(acheteurs_mois_dernier)
-abonne_et_achete = abonnes_newsletter.intersection(acheteurs_mois_dernier)
-tous_uniq = abonnes_newsletter.union(acheteurs_mois_dernier)
-
-print("abonne et achete:", abonne_et_achete)
-print("abonne pas achete:", abonne_pas_achete)
-print("tous les clients:", tous_uniq)
+print(decision)

@@ -1,20 +1,16 @@
-#     Créez un dictionnaire où les clés sont des noms d'utilisateurs.
-#     La valeur pour chaque utilisateur est un tuple de ses catégories de produits préférées (ex: ('Électronique', 'Livres')).
-#     Étant donné deux utilisateurs, trouvez s'ils ont des catégories préférées en commun.
-#
-# 💡 Convertissez les tuples en sets pour trouver facilement l'`intersection`.
+# Un utilisateur bénéficie de la livraison gratuite si : (`total_panier` > 100€ ET `est_membre_premium`) OU il a un `coupon_livraison_gratuite`.
+# Un utilisateur obtient une réduction de 10% si : il est un `membre_premium` OU (`total_panier` > 200€ ET NON `a_autres_reductions`).
+total_panier = 220
+est_membre_premium = False
+coupon_livraison_gratuite = True
+a_autres_reductions = False
 
-users = {
-    "someone1": {"Électronique", "Livres"},
-    "someone2": {"Food", "Accessoires"},
-    "someone3": {"Electro Menage", "Food"},
-    "someone4": {"Électronique", "Accessoires"},
-}
+avantages = []
 
-for username, categories in users.items():
-    for u, c in filter(lambda i: i[0] != username, users.items()):
-        if categories_commun := categories.intersection(c):
-            print(
-                f'catégories préférées en commun entre "{username}" et "{u}"',
-                categories_commun,
-            )
+if (total_panier > 100 and est_membre_premium) or coupon_livraison_gratuite:
+    avantages.append("Livraison gratuite")
+
+if est_membre_premium or (total_panier > 200 and not a_autres_reductions):
+    avantages.append("Réduction de 10%")
+
+print(avantages)
