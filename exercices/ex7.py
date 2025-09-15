@@ -1,9 +1,13 @@
-#    Créez une liste de scores de satisfaction [4.2, 3.8, 4.9, 3.5, 4.7, 4.1, 3.9]
-#    Comptez combien de scores sont supérieurs à 4.0
-#    Trouvez le score le plus élevé et le plus bas
+#     Stockez la configuration d'un serveur dans un tuple : ('192.168.1.1', 8080, 'production').
+#     Accédez à l'adresse IP (le premier élément) et affichez-la.
+#     Essayez de changer le numéro de port et observez l'erreur (car les tuples sont immuables).
+#
+# 💡 Accédez aux éléments avec l'indexation `config[0]`, mais vous ne pouvez pas assigner une nouvelle valeur.
 
+server = ("192.168.1.1", 8080, "production")
 
-satisfaction_scores = [4.2, 3.8, 4.9, 3.5, 4.7, 4.1, 3.9]
-high_scores = list(filter(lambda x: x > 4, satisfaction_scores))
+(ip, *_) = server
 
-print("scores supérieurs a 4:", high_scores, f"; {len(high_scores)} score(s)")
+print("ip:", ip)
+
+server[1] = 4444  # err

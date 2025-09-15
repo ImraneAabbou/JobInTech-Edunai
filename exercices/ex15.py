@@ -1,25 +1,91 @@
-# Créez des listes pour adresses_livraison ['123 Rue Main', '456 Ave Oak', '789 Rd Pine', '321 Rue Elm'], distances_km [2.5, 4.2, 1.8, 3.6], temps_livraison [15, 25, 12, 20], et poids_colis [2.1, 4.5, 1.2, 3.8]
-# Calculez l'efficacité de livraison (colis par minute) pour chaque arrêt
-# Triez les livraisons par distance (la plus courte en premier) pour l'optimisation d'itinéraire
-# Calculez la distance totale de l'itinéraire et le temps total estimé
-# Identifiez l'arrêt de livraison le plus efficace (temps le plus court par km)
+#     Commencez avec une liste de dictionnaires, où chaque dictionnaire représente une transaction de vente avec les clés 'produit', 'region', et 'montant'.
+#     Calculez les ventes totales par région.
+#     Calculez les ventes totales par produit.
+#     Identifiez le produit le plus vendu.
+#
+# 💡 Vous devrez parcourir la liste de dictionnaires et utiliser un autre dictionnaire pour stocker les totaux de ventes agrégés.
 
-adresses_livraison = ["123 Rue Main", "456 Ave Oak", "789 Rd Pine", "321 Rue Elm"]
-distances_km = [2.5, 4.2, 1.8, 3.6]
-temps_livraison = [15, 25, 12, 20]
-poids_colis = [2.1, 4.5, 1.2, 3.8]
+transactions = [
+    {
+        "produit": "Wifi ADSL TP-link",
+        "region": "Casa Settat",
+        "montant": 150,
+    },
+    {
+        "produit": "Wifi ADSL TP-link",
+        "region": "Casa Settat",
+        "montant": 200,
+    },
+    {
+        "produit": "Smartphone Samsung A14",
+        "region": "Rabat Salé Kenitra",
+        "montant": 2200,
+    },
+    {
+        "produit": "Laptop Lenovo IdeaPad",
+        "region": "Casa Settat",
+        "montant": 5400,
+    },
+    {
+        "produit": "Imprimante HP DeskJet",
+        "region": "Fès Meknès",
+        "montant": 1200,
+    },
+    {
+        "produit": "Laptop Lenovo IdeaPad",
+        "region": "Marrakech Safi",
+        "montant": 5600,
+    },
+    {
+        "produit": "Smartphone Samsung A14",
+        "region": "Casa Settat",
+        "montant": 2150,
+    },
+    {
+        "produit": "Tablette iPad Mini",
+        "region": "Tanger Tétouan Al Hoceima",
+        "montant": 4600,
+    },
+    {
+        "produit": "Imprimante HP DeskJet",
+        "region": "Rabat Salé Kenitra",
+        "montant": 1150,
+    },
+    {
+        "produit": "Wifi ADSL TP-link",
+        "region": "Marrakech Safi",
+        "montant": 170,
+    },
+]
 
 
-info_zipped = list(zip(adresses_livraison, distances_km, temps_livraison, poids_colis))
+for region in set(map(lambda t: t["region"], transactions)):
 
-for i in info_zipped:
-    print(f"{i[0]}:", i[3] / i[2], "kg/h")
+    region_montant_sum = sum(
+        map(
+            lambda t: t["montant"],
+            filter(lambda t: t["region"] == region, transactions),
+        )
+    )
 
-print("livraisons trier par distances:", sorted(info_zipped, key=lambda i: i[1]))
+    print(region, ":", region_montant_sum)
 
-print(
-    f"total distance de {sum(distances_km)} km; ",
-    f"tout sera delivree apres {sum(temps_livraison)} h"
-)
+print("_" * 5)
 
-print("livraison le plus efficace:", min(info_zipped, key=lambda i: i[2] / i[1]))
+for produit in set(map(lambda t: t["produit"], transactions)):
+
+    produit_montant_sum = sum(
+        map(
+            lambda t: t["montant"],
+            filter(lambda t: t["produit"] == produit, transactions),
+        )
+    )
+
+    print(produit, ":", produit_montant_sum)
+
+
+print("_" * 5)
+
+produits = list(map(lambda p: p["produit"], transactions))
+
+print("produit plus vendu:", max(set(produits), key=lambda t: produits.count(t)))

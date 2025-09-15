@@ -1,12 +1,12 @@
-#    Créez une liste de noms d'employes [Alice, Bob, Charlie, Diana, Eve]
-#    Triez la liste par ordre alphabétique
-#    Créez une liste inversée pour un ordre alphabétique inverse
+#     Créez une liste d'adresses IP de visiteurs avec des doublons : ['ip1', 'ip2', 'ip1', 'ip3', 'ip2'].
+#     Convertissez la liste en un set pour trouver les adresses IP uniques.
+#     Affichez le nombre de visiteurs uniques en utilisant `len()` sur le set.
 #
-#💡 Utilisez sort() pour trier et reverse() pour inverser
+# 💡 Utilisez `set(ma_liste)` pour convertir une liste en set et supprimer les doublons.
 
 
-employes = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+ips = ['ip1', 'ip2', 'ip1', 'ip3', 'ip2']
 
-employes.sort(reverse=True)
+ips_unique = set(ips)
 
-print("employes inversée:", employes)
+print('nombre visiteurs:', len(ips_unique))

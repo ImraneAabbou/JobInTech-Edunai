@@ -1,11 +1,14 @@
-#    Créez une liste de catégories [Électronique, Vêtements, Livres, Maison, Sports]
-#    Vérifiez si 'Électronique' et 'Automobile' sont dans la liste
-#    Ajoutez 'Automobile' s'il n'existe pas déjà
+#     Créez un dictionnaire `inventaire` : {'pommes': 50, 'oranges': 35}.
+#     Créez un autre dictionnaire pour une nouvelle livraison : `nouveau_stock = {'pommes': 25, 'bananes': 40}`.
+#     Utilisez la méthode `.update()` pour ajouter le nouveau stock à l'inventaire principal.
+#
+# 💡 `inventaire.update(nouveau_stock)` fusionne les dictionnaires.
 
-categories = ["Électronique", "Vêtements", "Livres", "Maison", "Sports"]
+inventaire = {'pommes': 50, 'oranges': 35}
 
+nouveau_stock = {'pommes': 25, 'oranges': 40}
 
-print(
-    "'Électronique'  dans la liste:",'Électronique' in categories, "\n"
-    "'Automobile'  dans la liste:",'Automobile' in categories, "\n"
-)
+inventaire.update(nouveau_stock)
+
+print(inventaire)
+

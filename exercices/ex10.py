@@ -1,11 +1,16 @@
-# Créez une liste de points de fidélité [850, 1200, 750, 1500, 920, 1100]
-# Triez les clients par points (du plus élevé au plus bas)
-# Identifiez les 3 meilleurs clients (top 3)
+#     Créez un dictionnaire `menu` avec au moins trois plats et leurs prix.
+#     Utilisez la méthode `.items()` pour obtenir toutes les paires clé-valeur.
+#     Affichez la liste des plats.
+#
+# 💡 `.items()` retourne un objet de vue qui affiche une liste des paires clé-valeur (en tuples) d'un dictionnaire.
 
-points_fidelite = [850, 1200, 750, 1500, 920, 1100]
+menu = {
+    "pizza": 20,
+    "sandwich": 20,
+    "chawarma": 20,
+}
 
-points_fidelite.sort()
+menu.items()
 
-high_fidelity_points = points_fidelite[:3]
-
-print(high_fidelity_points)
+for plat, prix in menu.items():
+    print(f"{plat}: {prix}")

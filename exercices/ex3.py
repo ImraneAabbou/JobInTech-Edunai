@@ -1,11 +1,11 @@
-# Créez une liste de ventes mensuelles [15000, 18000, 22000, 19000, 25000, 21000]
-# Trouvez le mois avec les ventes les plus élevées et les plus basses
-# Calculez et affichez les ventes totales et moyennes
+#     Créez un tuple pour stocker un dossier d'employé : (id_employe, nom, departement).
+#     Utilisez des valeurs comme (101, 'Alice', 'Ventes').
+#     Dépaquetez le tuple en trois variables distinctes et affichez le nom de l'employé.
+#
+# 💡 Le dépaquetage se fait comme ceci : `id_emp, nom, dept = tuple_employe`.
 
-ventes_mensuelles = [15000, 18000, 22000, 19000, 25000, 21000]
+employe = (101, "Alice", "Ventes")
 
-print(
-    "mois plus elvees:", max(ventes_mensuelles), "\n",
-    "mois plus basses:", min(ventes_mensuelles),
-    sep=""
-)
+(id_employe, alice,departement) = employe
+
+print(id_employe, alice,departement)

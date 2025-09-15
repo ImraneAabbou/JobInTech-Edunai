@@ -1,13 +1,11 @@
-#    Créez une liste de priorités [Normal, Urgent, Express, Standard, Rush]
-#    Déplacez tous les articles 'Urgent' et 'Rush' au début de la liste
-#    Affichez la liste de priorités finale organisée
+#     Créez un dictionnaire `menu` avec des plats comme clés et des prix comme valeurs (ex: 'Pizza': 12.50).
+#     Utilisez la méthode `.get()` pour vérifier en toute sécurité le prix du 'Sushi', en fournissant un message par défaut s'il n'est pas trouvé.
+#     Affichez le résultat.
+#
+# 💡 `menu.get('Sushi', 'Plat non disponible')` prévient les erreurs.
 
-priorities = ["Normal", "Urgent", "Express", "Standard", "Rush"]
+menu = {
+    "pizza": 12.5,
+}
 
-priorities.remove("Urgent")
-priorities.insert(0, "Urgent")
-
-priorities.remove("Rush")
-priorities.insert(1, "Rush")
-
-print(priorities)
+print("Sushi:", menu.get("Sushi", "n'est pas trouvé"))

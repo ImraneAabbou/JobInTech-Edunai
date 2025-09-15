@@ -1,20 +1,14 @@
-#    Créez une liste de revenus trimestriels [125000, 138000, 142000, 156000]
-#    Calculez la croissance entre chaque trimestre
-#    Identifiez le trimestre avec la plus forte croissance
+#     Retirer un Produit Arrêté
+#     Utilisez la méthode `.pop()` pour retirer la clé 'est_actif' et stocker sa valeur dans une variable.
+#     Affichez la valeur retirée et le dictionnaire mis à jour.
+#
+# 💡 `valeur_retiree = mon_dict.pop('cle_a_retirer')`.
 
+products = {
+    "nom": "",
+    "prix": 150,
+    "est_actif": False,
+}
 
-revenus_trimestriels = [125000, 138000, 142000, 156000]
-
-croissances = list(
-    map(
-        lambda pair: pair[1] - pair[0],
-        zip(revenus_trimestriels, revenus_trimestriels[1:])
-    )
-)
-
-
-print(
-    "croissances: ", croissances, "\n",
-    "max croissance: ", max(croissances), "\n",
-    sep=""
-)
+print("la valeur retirée:", products.pop("est_actif"))
+print("le dictionnaire mis à jour:", products)

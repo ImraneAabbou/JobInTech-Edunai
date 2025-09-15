@@ -1,15 +1,14 @@
-#    Créez une liste avec 5 noms de produits (ordinateurs portables, souris, claviers, moniteurs, imprimantes)
-#    Ajoutez 2 nouveaux produits à la fin de la liste
-#    Affichez le nombre total de produits ainsi que le premier et le dernier produit
+#     Créez un dictionnaire pour un client avec les clés : 'nom', 'email', 'ville'.
+#     Ajoutez une nouvelle paire clé-valeur pour 'points_fidelite' avec une valeur de 100.
+#     Affichez l'adresse email du client.
 #
-#💡 Utilisez append() pour ajouter des éléments et len() pour compter
+# 💡 Accédez aux valeurs du dictionnaire avec des crochets : `client['email']`.
+
+client = {
+    "nom": "someone",
+    "email": "someone@something.com",
+    "ville": "somewhere",
+}
 
 
-produits = ['ordinateurs portables', "souris", "claviers", "moniteurs", "imprimantes"]
-
-produits.append("Something 1")
-produits.append("Something 2")
-
-total_produits = len(produits)
-
-print("total:", total_produits)
+print("client mail:", client['email'])
