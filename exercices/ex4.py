@@ -1,26 +1,18 @@
-#     Étant donné un `revenu`, calculez l'impôt : 10% pour un revenu jusqu'à 50k€, 20% pour 50k€-100k€, et 30% pour plus de 100k€.
-#
-# 💡 C'est un excellent cas d'utilisation pour `if/elif/else`.
+# 1. Vous avez une liste de `transactions` qui inclut des entrées invalides (négatives).
+# 2. Utilisez une boucle `for` et l'instruction `continue` pour calculer la somme des transactions valides uniquement.
+# 3. Comptez également combien de transactions invalides ont été sautées.
+# 4. Affichez le total des transactions valides et le nombre d'invalides.
+transactions = [200, 50, -10, 300, -5, 75]
 
+total_valides = 0
+invalides = 0
 
-revenu = 5000
+for montant in transactions:
+    if montant < 0:
+        invalides += 1
+        continue
+    total_valides += montant
 
-impot_perc_dict = {
-    "a": 0.3,
-    "b": 0.2,
-    "c": 0.1,
-}
+print(f"Total des transactions valides : {total_valides}")
+print(f"Nombre de transactions invalides : {invalides}")
 
-impot_perc = 0
-
-if revenu <= 50000:
-    impot_perc = impot_perc_dict["c"]
-elif revenu <= 100000:
-    impot_perc = impot_perc_dict["b"]
-else:
-    impot_perc = impot_perc_dict["a"]
-
-impot = revenu * (1 + impot_perc)
-
-
-print("impot:", impot)

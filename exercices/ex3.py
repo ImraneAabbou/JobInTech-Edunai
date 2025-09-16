@@ -1,10 +1,10 @@
-#     Calculez les frais de port : Si le total d'une commande est supérieur à 50€, la livraison est gratuite. Sinon, elle coûte 5€.
-#
-# 💡 Vous pouvez utiliser un opérateur ternaire pour une solution concise.
+# 1. Parcourez le dictionnaire `inventaire` en utilisant `.items()` pour accéder à la fois au nom du produit et à son stock.
+# 2. Pour chaque produit, affichez une chaîne formatée comme : `Produit : Ordinateur, Stock : 12`.
+# 3. Dans la même boucle, vérifiez si le stock est inférieur à 10. Si c'est le cas, affichez un avertissement : `Alerte : Stock faible pour Clavier !`.
+inventaire = {'Ordinateur': 12, 'Souris': 45, 'Clavier': 8, 'Écran': 21}
 
-ttl_cmd = 250
+for produit, stock in inventaire.items():
+    print(f"Produit : {produit}, Stock : {stock}")
+    if stock < 10:
+        print(f"Alerte : Stock faible pour {produit} !")
 
-livraison_frais = 0 if ttl_cmd > 50 else 5    
-
-
-print("Total cmd:", ttl_cmd, "; Livraison frais:", livraison_frais)

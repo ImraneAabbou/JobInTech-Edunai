@@ -1,10 +1,16 @@
-# Imaginez un jeu où un joueur choisit une porte ('1' ou '2'). S'il choisit '1', il gagne une 'voiture'. S'il choisit '2', il obtient une 'chèvre'.
-choix = "2"
-resultat = ""
+# 1. Créez une liste vide appelée `noms_utilisateurs`.
+# 2. Parcourez la liste `noms_employes`.
+# 3. Pour chaque nom, créez un nom d'utilisateur en prenant le nom en minuscules et en ajoutant '@entreprise.com'.
+# 4. Ajoutez le nouveau nom d'utilisateur à la liste `noms_utilisateurs`.
+# 5. Affichez la liste finale `noms_utilisateurs`.
+# Données : `noms_employes = ['Alice', 'Bob', 'Charlie']`
+# 💡 Utilisez la méthode de chaîne `.lower()` sur chaque nom à l'intérieur de la boucle.
 
-if choix == "1":
-    resultat = "voiture"
-elif choix == "2":
-    resultat = "chèvre"
+noms_employes = ['Alice', 'Bob', 'Charlie']
+noms_utilisateurs = []
 
-print(resultat)
+for nom in noms_employes:
+    noms_utilisateurs.append(nom.lower() + '@entreprise.com')
+
+print(noms_utilisateurs)
+

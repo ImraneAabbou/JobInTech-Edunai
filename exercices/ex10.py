@@ -1,11 +1,8 @@
-# Si la `temperature` est inférieure à 0°C OU si `il_pleut` est `True`, affichez 'Restez à l'intérieur !'. Sinon, affichez 'Profitez du beau temps'.
-temperature = -3
-il_pleut = False
-message = ""
+# 1. Utilisez une boucle `for` avec `range()` pour générer les nombres de 101 à 105 (inclus).
+# 2. Pour chaque nombre, affichez une chaîne d'ID de rapport formatée, comme `Génération du rapport : REP-101`
+# Aucune liste de données initiale nécessaire.
+# 💡 `range(101, 106)` vous donnera les nombres de 101 jusqu'à, mais non inclus, 106.
 
-if temperature < 0 or il_pleut:
-    message = "Restez à l'intérieur !"
-else:
-    message = "Profitez du beau temps"
+for numero in range(101, 106):
+    print(f"Génération du rapport : REP-{numero}")
 
-print(message)
