@@ -1,19 +1,28 @@
-# 1. Simulez un système d'inventaire qui s'arrête lorsque le stock est bas.
-# 2. Démarrez une boucle `while` qui continue tant que `niveau_stock` est supérieur au `seuil_recommande`.
-# 3. À l'intérieur de la boucle, simulez une vente en soustrayant un nombre aléatoire (par ex., entre 1 et 5) du `niveau_stock`.
-# 4. Affichez le nouveau niveau de stock à chaque itération.
-# 5. Après la fin de la boucle, affichez un message comme `Le stock est bas (12 unités) ! Il est temps de réapprovisionner.`
-# Données : `import random`, `niveau_stock = 50`, `seuil_recommande = 15`
-# 💡 Vous aurez besoin de `import random` en haut de votre script. Utilisez `random.randint(1, 5)` pour obtenir un montant de vente aléatoire.
+# Créez une fonction `nettoyer_donnees(liste_chaines, supprimer_vides=True, convertir_minuscules=False)`.
+# La fonction prend une liste de chaînes de caractères.
+# `supprimer_vides` (booléen, par défaut `True`) : si `True`, retire toutes les chaînes vides ou composées uniquement d'espaces.
+# `convertir_minuscules` (booléen, par défaut `False`) : si `True`, convertit toutes les chaînes restantes en minuscules.
+# La fonction doit retourner la liste de chaînes nettoyée.
+#
+# Testez avec `donnees = ['  Apple  ', '', 'Banana ', '   ', 'Orange']` et différentes options.
+#
+# 💡 Utilisez une boucle `for` et une nouvelle liste pour les résultats. Les méthodes `.strip()` et `.lower()` seront utiles.
 
-import random
+def nettoyer_donnees(liste_chaines, supprimer_vides=True, convertir_minuscules=False):
+    resultat = []
+    for chaine in liste_chaines:
+        propre = chaine.strip()
+        if supprimer_vides and propre == "":
+            continue
+        if convertir_minuscules:
+            propre = propre.lower()
+        resultat.append(propre)
+    return resultat
 
-niveau_stock = 50
-seuil_recommande = 15
 
-while niveau_stock > seuil_recommande:
-    vente = random.randint(1, 5)
-    niveau_stock -= vente
-    print(f"Niveau de stock actuel : {niveau_stock}  --  {vente} vente(s)")
+donnees = ['  Apple  ', '', 'Banana ', '   ', 'Orange']
 
-print(f"Le stock est bas ({niveau_stock} unités) ! Il est temps de réapprovisionner.")
+print(nettoyer_donnees(donnees))
+print(nettoyer_donnees(donnees, supprimer_vides=False))
+print(nettoyer_donnees(donnees, convertir_minuscules=True))
+print(nettoyer_donnees(donnees, supprimer_vides=False, convertir_minuscules=True))

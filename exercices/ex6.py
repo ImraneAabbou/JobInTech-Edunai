@@ -1,16 +1,12 @@
-# 1. Créez une liste vide appelée `noms_utilisateurs`.
-# 2. Parcourez la liste `noms_employes`.
-# 3. Pour chaque nom, créez un nom d'utilisateur en prenant le nom en minuscules et en ajoutant '@entreprise.com'.
-# 4. Ajoutez le nouveau nom d'utilisateur à la liste `noms_utilisateurs`.
-# 5. Affichez la liste finale `noms_utilisateurs`.
-# Données : `noms_employes = ['Alice', 'Bob', 'Charlie']`
-# 💡 Utilisez la méthode de chaîne `.lower()` sur chaque nom à l'intérieur de la boucle.
+# 1. Définir la fonction celsius_vers_fahrenheit(celsius).
+# 2. Utiliser la formule : (celsius * 9/5) + 32.
+# 3. Retourner le résultat.
+# 4. Tester avec 25°C.
 
-noms_employes = ['Alice', 'Bob', 'Charlie']
-noms_utilisateurs = []
+def celsius_vers_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
 
-for nom in noms_employes:
-    noms_utilisateurs.append(nom.lower() + '@entreprise.com')
-
-print(noms_utilisateurs)
+# Test
+temperature_f = celsius_vers_fahrenheit(25)
+print(temperature_f)
 

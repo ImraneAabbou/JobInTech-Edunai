@@ -1,14 +1,11 @@
-# 1. Parcourez la liste `notes_tests`.
-# 2. Trouvez la première note inférieure à 60.
-# 3. Lorsque vous la trouvez, affichez un message comme `Première note échouée : 55` et arrêtez immédiatement la boucle.
-# 4. Utilisez l'instruction `break`.
-# Données : `notes_tests = [88, 92, 75, 55, 95, 45, 89]`
-# 💡 La condition `if note < 60:` est ce dont vous avez besoin pour déclencher le `break`.
+# 1. Définir la fonction obtenir_nom_complet(prenom, nom).
+# 2. Retourner une chaîne formatée 'Prénom Nom' avec .title().
+# 3. Tester avec prenom='jean' et nom='dupont'.
 
-notes_tests = [88, 92, 75, 55, 95, 45, 89]
+def obtenir_nom_complet(prenom, nom):
+    return f"{prenom.title()} {nom.title()}"
 
-for note in notes_tests:
-    if note < 60:
-        print(f"Première note échouée : {note}")
-        break
+# Test
+nom_complet = obtenir_nom_complet("jean", "dupont")
+print(nom_complet)
 

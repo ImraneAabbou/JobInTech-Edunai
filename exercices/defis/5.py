@@ -1,16 +1,32 @@
-# 1. Vous avez deux listes : `departements` et `trimestres`.
-# 2. Utilisez une boucle imbriquée (une boucle `for` à l'intérieur d'une autre) pour générer un résumé de rapport.
-# 3. La boucle externe doit itérer sur les `departements`, et la boucle interne sur les `trimestres`.
-# 4. Pour chaque combinaison, affichez une ligne comme : `Génération du rapport pour Ventes - T1`
-# Données : `departements = ['Ventes', 'Marketing', 'IT']`, `trimestres = ['T1', 'T2', 'T3', 'T4']`
-# 💡 La structure de votre code ressemblera à : `for departement in departements: ... for trimestre in trimestres: ...`
+# Définissez un dictionnaire global `inventaire = {'ordinateur': 10, 'souris': 50, 'clavier': 20}`.
+# Créez deux fonctions :
+# 1. `ajouter_stock(produit, quantite)` : ajoute la `quantite` spécifiée au `produit` dans `inventaire`. Si le produit n'existe pas, l'ajoute.
+# 2. `vendre_stock(produit, quantite)` : réduit la `quantite` du `produit`. S'assure que le stock ne devient pas négatif. Si la vente est réussie, retourne `True`, sinon `False` (avec un message d'erreur si stock insuffisant).
+# Affichez l'inventaire après chaque opération pour démontrer le changement.
+#
+# Testez l'ajout de 5 'ordinateurs', la vente de 12 'souris', puis tentez de vendre 30 'clavier' (alors qu'il n'y en a que 20).
+#
+# 💡 Utilisez le mot-clé `global` dans les fonctions pour modifier le dictionnaire `inventaire`. Utilisez `.get()` avec une valeur par défaut pour les produits non existants.
 
-departements = ['Ventes', 'Marketing', 'IT']
-trimestres = ['T1', 'T2', 'T3', 'T4']
+inventaire = {'ordinateur': 10, 'souris': 50, 'clavier': 20}
 
-for departement in departements:
-    for trimestre in trimestres:
-        print(f"Génération du rapport pour {departement} - {trimestre}")
+def ajouter_stock(produit, quantite):
+    global inventaire
+    inventaire[produit] = inventaire.get(produit, 0) + quantite
+    print(f"Ajouté {quantite} {produit}(s). Inventaire actuel: {inventaire}")
 
-    print("-" * 15)
+def vendre_stock(produit, quantite):
+    global inventaire
+    if inventaire.get(produit, 0) >= quantite:
+        inventaire[produit] -= quantite
+        print(f"Vendu {quantite} {produit}(s). Inventaire actuel: {inventaire}")
+        return True
+    else:
+        print(f"Stock insuffisant pour {produit}. Inventaire actuel: {inventaire}")
+        return False
+
+# Tests
+ajouter_stock('ordinateur', 5)
+vendre_stock('souris', 12)
+vendre_stock('clavier', 30)
 

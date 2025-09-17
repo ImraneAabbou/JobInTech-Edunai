@@ -1,18 +1,15 @@
-# 1. Vous avez une liste de `transactions` qui inclut des entrées invalides (négatives).
-# 2. Utilisez une boucle `for` et l'instruction `continue` pour calculer la somme des transactions valides uniquement.
-# 3. Comptez également combien de transactions invalides ont été sautées.
-# 4. Affichez le total des transactions valides et le nombre d'invalides.
-transactions = [200, 50, -10, 300, -5, 75]
+# 1. Définir la fonction est_adulte(age).
+# 2. Vérifier si age >= 18.
+# 3. Retourner True si c’est le cas, sinon False.
+# 4. Tester avec age = 20 et age = 16.
+# 5. Afficher les résultats.
 
-total_valides = 0
-invalides = 0
+def est_adulte(age):
+    if age >= 18:
+        return True
+    else:
+        return False
 
-for montant in transactions:
-    if montant < 0:
-        invalides += 1
-        continue
-    total_valides += montant
-
-print(f"Total des transactions valides : {total_valides}")
-print(f"Nombre de transactions invalides : {invalides}")
+print(est_adulte(20))  # Doit afficher True
+print(est_adulte(16))  # Doit afficher False
 

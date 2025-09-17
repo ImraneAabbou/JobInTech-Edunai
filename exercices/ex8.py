@@ -1,20 +1,15 @@
-# 1. On vous donne une liste de dictionnaires de produits.
-# 2. Initialisez `revenu_total` à 0.
-# 3. Parcourez la liste `produits`. Pour chaque produit, calculez sa valeur totale (`prix` * `quantite`).
-# 4. Ajoutez cette valeur au `revenu_total`.
-# 5. Affichez le `revenu_total` final.
-# Données : `produits = [{'nom': 'Ordinateur', 'prix': 1200, 'quantite': 5}, {'nom': 'Souris', 'prix': 25, 'quantite': 30}]`
-# 💡 À l'intérieur de la boucle, vous accéderez aux valeurs du dictionnaire comme `produit['prix']`.
+# 1. Définir la fonction obtenir_prix_final(prix_base, taux_taxe=0.08).
+# 2. Calculer le prix final = prix_base * (1 + taux_taxe).
+# 3. Retourner le résultat.
+# 4. Tester avec prix_base=50 (taxe par défaut) et prix_base=100 avec taux_taxe=0.10.
 
-produits = [
-    {'nom': 'Ordinateur', 'prix': 1200, 'quantite': 5},
-    {'nom': 'Souris', 'prix': 25, 'quantite': 30}
-]
+def obtenir_prix_final(prix_base, taux_taxe=0.08):
+    return prix_base * (1 + taux_taxe)
 
-revenu_total = 0
+# Tests
+prix1 = obtenir_prix_final(50)         # taxe par défaut (8%)
+prix2 = obtenir_prix_final(100, 0.10)  # taxe personnalisée (10%)
 
-for produit in produits:
-    revenu_total += produit['prix'] * produit['quantite']
-
-print(revenu_total)
+print(prix1)
+print(prix2)
 

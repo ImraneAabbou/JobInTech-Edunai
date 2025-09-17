@@ -1,26 +1,19 @@
-# 1. Vous avez une liste de résultats de sondage, dont certains sont invalides (marqués par `-1`).
-# 2. Créez une liste vide `resultats_valides` et une variable `score_total_valide = 0`.
-# 3. Parcourez `resultats_sondage`. Utilisez `continue` pour sauter les résultats invalides.
-# 4. Pour les résultats valides, ajoutez-les à `score_total_valide` et ajoutez-les également à la liste `resultats_valides`.
-# 5. Après la boucle, calculez et affichez la moyenne des scores valides.
-# Données : `resultats_sondage = [8, 9, -1, 10, 7, -1, 9]`
-# 💡 La moyenne est `score_total_valide / len(resultats_valides)`. Faites attention de ne pas diviser par zéro s'il n'y a aucun résultat valide !
-
-resultats_sondage = [8, 9, -1, 10, 7, -1, 9]
-
-resultats_valides = []
-score_total_valide = 0
-
-for score in resultats_sondage:
-    if score == -1:
-        continue
-    resultats_valides.append(score)
-    score_total_valide += score
-
-if resultats_valides:
-    moyenne = score_total_valide / len(resultats_valides)
-    print(f"Moyenne des scores valides : {moyenne:.2f}")
-else:
-    print("Aucun score valide disponible.")
+# Créez une fonction `generer_rapport_notes(nom_etudiant, notes)` où `notes` est une liste de nombres.
+# La fonction doit :
+# 1. Calculer la note moyenne de l'étudiant.
+# 2. Déterminer si l'étudiant a réussi (moyenne > 60) ou échoué.
+# 3. Retourner une chaîne de rapport formatée : `Rapport de Notes pour [Nom Étudiant]\nMoyenne : [Moyenne (2 décimales)]\nStatut : [Réussi/Échoué]`.
+#
+# Générez un rapport pour 'Sophie Martin' avec les notes `[75, 88, 62, 91, 55]`.
+#
+# 💡 Utilisez `sum()` et `len()` pour la moyenne. Les f-strings pour le formatage. Les conditions pour le statut.
 
 
+def generer_rapport_notes(nom_etudiant, notes):
+    moyenne = sum(notes) / len(notes)
+    statut = "Réussi" if moyenne > 60 else "Échoué"
+    return f"Rapport de Notes pour {nom_etudiant}\nMoyenne : {moyenne:.2f}\nStatut : {statut}"
+
+
+notes_etudiante = [75, 88, 62, 91, 55]
+print(generer_rapport_notes("Someone", notes_etudiante))

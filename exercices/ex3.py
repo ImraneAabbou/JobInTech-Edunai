@@ -1,10 +1,12 @@
-# 1. Parcourez le dictionnaire `inventaire` en utilisant `.items()` pour accéder à la fois au nom du produit et à son stock.
-# 2. Pour chaque produit, affichez une chaîne formatée comme : `Produit : Ordinateur, Stock : 12`.
-# 3. Dans la même boucle, vérifiez si le stock est inférieur à 10. Si c'est le cas, affichez un avertissement : `Alerte : Stock faible pour Clavier !`.
-inventaire = {'Ordinateur': 12, 'Souris': 45, 'Clavier': 8, 'Écran': 21}
+# 1. Définir la fonction appliquer_reduction(prix, pourcentage_reduction).
+# 2. À l'intérieur, appliquer la formule : prix * (1 - pourcentage_reduction / 100).
+# 3. Retourner le résultat avec return.
+# 4. Appeler la fonction avec prix = 150 et pourcentage_reduction = 15.
+# 5. Afficher le prix après réduction.
 
-for produit, stock in inventaire.items():
-    print(f"Produit : {produit}, Stock : {stock}")
-    if stock < 10:
-        print(f"Alerte : Stock faible pour {produit} !")
+def appliquer_reduction(prix, pourcentage_reduction):
+    return prix * (1 - pourcentage_reduction / 100)
+
+prix_reduit = appliquer_reduction(150, 15)
+print(f"Le prix après réduction est : {prix_reduit} €")
 
