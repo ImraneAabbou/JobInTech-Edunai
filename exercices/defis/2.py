@@ -1,37 +1,21 @@
-# 1. Créez une classe de base `Employe` avec `nom`, `id_employe`, et une méthode `calculer_paie()`.
-# 2. Créez deux classes enfants, `EmployeSalarie` et `EmployeHoraire`, qui héritent de `Employe`.
-# 3. Redéfinissez `calculer_paie()` dans chaque classe enfant pour implémenter une logique différente (ex: salaire fixe vs. heures_travaillees * taux_horaire).
-#
-# 💡 Ceci montre le polymorphisme: vous pouvez appeler `.calculer_paie()` sur n'importe quel objet employé, et il fera la bonne chose en fonction de sa classe.
+# 1. On vous donne les données de ventes pour deux régions différentes.
+# 2. Tracez les ventes des deux régions sur le même graphique linéaire.
+# 3. Ajoutez une légende pour distinguer 'Région A' et 'Région B'.
+# 4. Ajoutez un titre et des étiquettes d'axes.
+# 
+# Données : `mois = [1, 2, 3, 4]`, `ventes_a = [100, 110, 130, 125]`, `ventes_b = [90, 105, 120, 135]`
+# 💡 Appelez `plt.plot()` deux fois, une pour les données de chaque région. Utilisez le paramètre `label` dans `plt.plot()` puis appelez `plt.legend()`.
 
-class Employe:
-    def __init__(self, nom, id_employe):
-        self.nom = nom
-        self.id_employe = id_employe
+import matplotlib.pyplot as plt
 
-    def calculer_paie(self):
-        pass
+mois = [1, 2, 3, 4]
+ventes_a = [100, 110, 130, 125]
+ventes_b = [90, 105, 120, 135]
 
-class EmployeSalarie(Employe):
-    def __init__(self, nom, id_employe, salaire):
-        super().__init__(nom, id_employe)
-        self.salaire = salaire
+plt.plot(mois, ventes_a, label='Région A')
+plt.plot(mois, ventes_b, label='Région B')
 
-    def calculer_paie(self):
-        return self.salaire
+plt.legend()
 
-class EmployeHoraire(Employe):
-    def __init__(self, nom, id_employe, heures_travaillees, taux_horaire):
-        super().__init__(nom, id_employe)
-        self.heures_travaillees = heures_travaillees
-        self.taux_horaire = taux_horaire
-
-    def calculer_paie(self):
-        return self.heures_travaillees * self.taux_horaire
-
-e1 = EmployeSalarie("Bob", 1, 3000)
-e2 = EmployeHoraire("Alice", 2, 160, 20)
-
-print(e1.calculer_paie())
-print(e2.calculer_paie())
+plt.show()
 

@@ -1,23 +1,9 @@
-#     Créez une classe parent `Vehicule` avec une méthode `conduire()` qui imprime 'Conduite d'un véhicule.'
-#     Créez une classe enfant `Voiture` qui hérite de `Vehicule` et a sa propre méthode `klaxonner()` qui imprime 'Klaxon! Klaxon!'.
-#
-# Créez un objet `Voiture` et appelez ses méthodes `conduire()` et `klaxonner()`.
-#
-# 💡 Pour hériter, utilisez `class Voiture(Vehicule):`.
+# En utilisant le DataFrame des ventes, filtrez et affichez uniquement les lignes où les 'Ventes' sont supérieures à 29000.
+# 💡 La syntaxe pour filtrer est `df[df['NomColonne'] > valeur]`.
 
+import pandas as pd
 
-class Vehicule:
-    def klaxonner(self):
-        print("Klaxon! Klaxon!")
+data = {'Mois': ['Jan', 'Fév', 'Mar'], 'Ventes': [25000, 28000, 31000]}
+df = pd.DataFrame(data)
+print(df[df['Ventes'] > 29000])
 
-    def conduire(self):
-        print("Conduite d'un véhicule.")
-
-class Voiture(Vehicule):
-    pass
-
-
-v = Voiture()
-
-v.conduire()
-v.klaxonner()

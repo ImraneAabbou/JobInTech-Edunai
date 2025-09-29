@@ -1,37 +1,25 @@
-# 1. Créez une classe `Livre` avec `titre`, `auteur`, `isbn`.
-# 2. Créez une classe `Bibliotheque` qui contient une liste d'objets `Livre`.
-# 3. La classe `Bibliotheque` devrait avoir des méthodes pour `ajouter_livre(livre)`, `trouver_livre_par_titre(titre)`, et `lister_tous_les_livres()`.
+# 1. Créez un DataFrame à partir des données clients.
+# 2. Filtrez le DataFrame pour trouver tous les clients des 'USA' qui ont plus de 30 ans.
+# 3. Calculez l'âge moyen de tous les clients.
+# 4. Comptez combien de clients viennent de chaque pays.
 #
-# 💡 La classe `Bibliotheque` gère une collection d'objets `Livre`. C'est un modèle de POO courant et puissant.
+# Données : `data = {'Nom': ['Alice', 'Bob', 'Charlie', 'David'], 'Age': [25, 35, 40, 28], 'Pays': ['USA', 'Canada', 'USA', 'UK']}`
+# 💡 Utilisez `&` pour plusieurs conditions de filtre. Utilisez `.mean()` pour la moyenne et `.value_counts()` pour le comptage.
 
-class Livre:
-    def __init__(self, titre, auteur, isbn):
-        self.titre = titre
-        self.auteur = auteur
-        self.isbn = isbn
+import pandas as pd
 
-class Bibliotheque:
-    def __init__(self):
-        self.livres = []
+data = {
+    "Nom": ["Alice", "Bob", "Charlie", "David"],
+    "Age": [25, 35, 40, 28],
+    "Pays": ["USA", "Canada", "USA", "UK"],
+}
+df = pd.DataFrame(data)
 
-    def ajouter_livre(self, livre):
-        self.livres.append(livre)
+clients_usa_plus_30 = df[(df["Pays"] == "USA") & (df["Age"] > 30)]
+print(clients_usa_plus_30)
 
-    def trouver_livre_par_titre(self, titre):
-        for livre in self.livres:
-            if livre.titre == titre:
-                return livre
-        return None
+age_moyen = df["Age"].mean()
+print("Âge moyen:", age_moyen)
 
-    def lister_tous_les_livres(self):
-        return [(livre.titre, livre.auteur, livre.isbn) for livre in self.livres]
-
-b = Bibliotheque()
-l1 = Livre("1984", "George Orwell", "12345")
-l2 = Livre("Le Petit Prince", "Antoine de Saint-Exupéry", "67890")
-
-b.ajouter_livre(l1)
-b.ajouter_livre(l2)
-
-print(b.lister_tous_les_livres())
-
+clients_par_pays = df["Pays"].value_counts()
+print(clients_par_pays)

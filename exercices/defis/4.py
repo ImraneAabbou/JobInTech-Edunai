@@ -1,56 +1,18 @@
-# 1. Créez une classe de base `Vehicule` avec `marque`, `modele`, et un booléen `est_loue`.
-# 2. Créez des classes enfants `Voiture` et `Moto` qui héritent de `Vehicule`.
-# 3. Créez une classe `AgenceDeLocation` qui gère une flotte d'objets `Vehicule`.
-# 4. L' `AgenceDeLocation` devrait avoir des méthodes pour `louer_vehicule(modele)` et `retourner_vehicule(modele)` qui changent le statut `est_loue`.
+# 1. Créez deux tableaux NumPy, `heures_etude` et `notes_examen`, avec 10 nombres aléatoires chacun.
+# 2. Créez un nuage de points pour visualiser la relation entre les heures d'étude et les notes d'examen.
+# 3. Ajoutez un titre 'Heures d'étude vs. Notes d'examen' et des étiquettes d'axes appropriées.
 #
-# 💡 L'`AgenceDeLocation` devra parcourir sa liste de véhicules pour trouver le bon à louer ou à retourner.
+# 💡 Utilisez `np.random.rand(10)` pour créer des tableaux aléatoires. Utilisez `plt.scatter(x, y)` pour le graphique.
 
+import numpy as np
+import matplotlib.pyplot as plt
 
-class Vehicule:
-    def __init__(self, marque, modele):
-        self.marque = marque
-        self.modele = modele
-        self.est_loue = False
+heures_etude = np.random.rand(10) * 10
+notes_examen = np.random.rand(10) * 100
 
+plt.scatter(heures_etude, notes_examen)
+plt.title("Heures d'étude vs. Notes d'examen")
+plt.xlabel("Heures d'étude")
+plt.ylabel("Notes d'examen")
+plt.show()
 
-class Voiture(Vehicule):
-    pass
-
-
-class Moto(Vehicule):
-    pass
-
-
-class AgenceDeLocation:
-    def __init__(self):
-        self.vehicules = []
-
-    def ajouter_vehicule(self, vehicule):
-        self.vehicules.append(vehicule)
-
-    def louer_vehicule(self, modele):
-        for v in self.vehicules:
-            if v.modele == modele and not v.est_loue:
-                v.est_loue = True
-                return f"{modele} a été loué."
-        return f"{modele} non disponible."
-
-    def retourner_vehicule(self, modele):
-        for v in self.vehicules:
-            if v.modele == modele and v.est_loue:
-                v.est_loue = False
-                return f"{modele} a été retourné."
-        return f"{modele} n'était pas loué."
-
-
-a = AgenceDeLocation()
-v1 = Voiture("Toyota", "Corolla")
-v2 = Moto("Yamaha", "MT-07")
-
-a.ajouter_vehicule(v1)
-a.ajouter_vehicule(v2)
-
-print(a.louer_vehicule("Corolla"))
-print(a.louer_vehicule("Corolla"))
-print(a.retourner_vehicule("Corolla"))
-print(a.retourner_vehicule("Corolla"))

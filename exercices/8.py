@@ -1,21 +1,15 @@
-# Créez une classe parent `Employe` avec `__init__(self, nom)`.
-# Créez une classe enfant `Manager` qui hérite de `Employe` et a `__init__(self, nom, departement)`.
-# À l'intérieur de l'`__init__` du `Manager`, utilisez `super().__init__(nom)` pour appeler le constructeur du parent.
-#
-# Créez un objet `Manager` nommé 'Bob' dans le département 'Ventes'.
-#
-# 💡 `super()` vous permet d'accéder aux méthodes de la classe parent, ce qui évite de réécrire du code.
+# En utilisant le graphique de l'exercice précédent, ajoutez un titre 'Tendance des Ventes Mensuelles'.
+# Ajoutez une étiquette pour l'axe des x 'Mois' et pour l'axe des y 'Ventes (€)'.
+# 💡 Utilisez `plt.title()`, `plt.xlabel()`, et `plt.ylabel()` avant `plt.show()`.
 
+import matplotlib.pyplot as plt
 
-class Employe:
-    def __init__(self, nom):
-        self.nom = nom
+mois = [1, 2, 3, 4]
+ventes = [100, 120, 115, 130]
 
+plt.plot(mois, ventes)
+plt.title('Tendance des ventes mensuelles')
+plt.xlabel('Mois')
+plt.ylabel('Ventes (€)')
+plt.show()
 
-class Manager(Employe):
-    def __init__(self, nom, departement):
-        super().__init__(nom)
-        self.departement = departement
-
-
-m = Manager("Bob", "Ventes")

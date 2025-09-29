@@ -1,14 +1,10 @@
-#     Créez une classe `Client`.
-#     Utilisez la méthode `__init__` pour initialiser `id_client`, `nom` et `email` lorsqu'un objet est créé.
-#
-# Créez un client avec l'ID 101, le nom 'Alice' et l'email 'alice@example.com'.
-#
-# 💡 La méthode `__init__` est la manière standard de définir les attributs initiaux d'un objet.
+# Créez un DataFrame à partir d'un dictionnaire de données de ventes : `{'Mois': ['Jan', 'Fév', 'Mar'], 'Ventes': [25000, 28000, 31000]}`.
+# Affichez le DataFrame.
+# 💡 Utilisez `pd.DataFrame(data_dict)`.
 
-class Client:
-    def __init__(self, _id, nom, email):
-        self.id = _id
-        self.nom = nom
-        self.email = email
+import pandas as pd
 
-c = Client(1, "Someone", "someone@somewhere.com")
+data = {'Mois': ['Jan', 'Fév', 'Mar'], 'Ventes': [25000, 28000, 31000]}
+df = pd.DataFrame(data)
+print(df)
+

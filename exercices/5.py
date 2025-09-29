@@ -1,20 +1,9 @@
-# Créez une classe `UtilisateurSiteWeb`.
-#     Ajoutez une variable de classe `nombre_utilisateurs = 0`.
-#     Dans la méthode `__init__`, incrémentez `nombre_utilisateurs` de 1 chaque fois qu'un nouvel utilisateur est créé.
-#
-# Créez trois objets `UtilisateurSiteWeb` puis imprimez `UtilisateurSiteWeb.nombre_utilisateurs` pour voir le total.
-#
-# 💡 Les variables de classe sont définies directement dans la classe, pas dans une méthode. Accédez-y avec `UtilisateurSiteWeb.nombre_utilisateurs`.
+# En utilisant le DataFrame de l'exercice précédent, sélectionnez et affichez uniquement la colonne 'Ventes'.
+# 💡 Vous pouvez sélectionner une colonne en utilisant `df['NomColonne']`.
 
+import pandas as pd
 
-class UtilisateurSiteWeb:
-    nombre_utilisateurs = 0
+data = {'Mois': ['Jan', 'Fév', 'Mar'], 'Ventes': [25000, 28000, 31000]}
+df = pd.DataFrame(data)
+print(df['Ventes'])
 
-    def __init__(self):
-        UtilisateurSiteWeb.nombre_utilisateurs += 1
-
-
-u1 = UtilisateurSiteWeb()
-u2 = UtilisateurSiteWeb()
-
-print("total d'utilisateur:", UtilisateurSiteWeb.nombre_utilisateurs)
